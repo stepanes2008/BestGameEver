@@ -11,16 +11,16 @@ NavMeshProjectSettings:
     cost: 1
   - name: Jump
     cost: 2
-  - name: 
+  - name: Castle
+    cost: 2
+  - name: Ground
     cost: 1
-  - name: 
+  - name: Village
     cost: 1
-  - name: 
-    cost: 1
-  - name: 
-    cost: 1
-  - name: 
-    cost: 1
+  - name: Stones
+    cost: 3
+  - name: Circus
+    cost: 2
   - name: 
     cost: 1
   - name: 
@@ -88,4 +88,4 @@ NavMeshProjectSettings:
     debug:
       m_Flags: 0
   m_SettingNames:
-  - Humanoid
+  - wolf

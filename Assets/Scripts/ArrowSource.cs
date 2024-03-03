@@ -18,6 +18,8 @@ public class ArrowSource : MonoBehaviour
             result += numbers[i];
         }
         Debug.Log(result);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -34,7 +36,6 @@ public class ArrowSource : MonoBehaviour
         {
             targetPoint.position = ray.GetPoint(targetInSkyDistance);
         }
-
-            transform.LookAt(targetPoint.position);
+        transform.LookAt(targetPoint.position);
     }
 }

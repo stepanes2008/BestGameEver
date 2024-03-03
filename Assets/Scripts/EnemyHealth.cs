@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public GameObject Raptor;
     public float value = 100;
+    public float _time = 0f;
+
+    void Update()
+    {
+        if (value <= 0)
+        {
+            DestroyEnemy();
+        }
+    }
 
     public void DealDamage(float damage)
     {
@@ -17,6 +27,11 @@ public class EnemyHealth : MonoBehaviour
     }
     private void DestroyEnemy()
     {
-        Destroy(gameObject);
+        _time += Time.deltaTime;
+        Raptor.GetComponent<Animator>().SetTrigger("Death");
+        if (_time >= 1.5f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

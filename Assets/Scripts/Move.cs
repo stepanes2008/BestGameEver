@@ -55,12 +55,15 @@ public class Move : MonoBehaviour
 
     void FixedUpdate()
     {
-        _controller.Move(_move * 6 * Time.fixedDeltaTime);
-        _fallVelocity += 9.8f * Time.fixedDeltaTime;
-        _controller.Move(Vector3.down * _fallVelocity * Time.fixedDeltaTime);
-        if (_controller.isGrounded)
+        if (GetComponent<PlayerHealth>().value > 0f)
         {
-            _fallVelocity = 0f;
+            _controller.Move(_move * 6 * Time.fixedDeltaTime);
+            _fallVelocity += 9.8f * Time.fixedDeltaTime;
+            _controller.Move(Vector3.down * _fallVelocity * Time.fixedDeltaTime);
+            if (_controller.isGrounded)
+            {
+                _fallVelocity = 0f;
+            }
         }
     }
     private void OnCollisionEnter(Collision other)

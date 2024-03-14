@@ -7,17 +7,10 @@ public class ArrowSource : MonoBehaviour
     public Transform targetPoint;
     public Camera cameraLink;
     public float targetInSkyDistance;
-    int[] numbers = { 7, 12, 4, 8, 3, 64, 11 };
-    int result = 5;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 1; i < 6; i++)
-        {
-            result += numbers[i];
-        }
-        Debug.Log(result);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

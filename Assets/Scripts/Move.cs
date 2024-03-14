@@ -39,17 +39,32 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             _move -= transform.right;
-            Player.GetComponent<Animator>().SetBool("isRunning", true);
+            Player.GetComponent<Animator>().SetBool("Left", true);
+        }
+        if (Input.GetKeyUp(KeyCode.A))
+        {
+            _move -= transform.right;
+            Player.GetComponent<Animator>().SetBool("Left", false);
         }
         if (Input.GetKey(KeyCode.S))
         {
             _move -= transform.forward;
-            Player.GetComponent<Animator>().SetBool("isRunning", true);
+            Player.GetComponent<Animator>().SetBool("Back", true);
+        }
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            _move -= transform.forward;
+            Player.GetComponent<Animator>().SetBool("Back", false);
         }
         if (Input.GetKey(KeyCode.D))
         {
             _move += transform.right;
-            Player.GetComponent<Animator>().SetBool("isRunning", true);
+            Player.GetComponent<Animator>().SetBool("Right", true);
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            _move += transform.right;
+            Player.GetComponent<Animator>().SetBool("Right", false);
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ArrowCaster : MonoBehaviour
 {
+    public GameObject Player;
     public ArrowController Arrow;
     public GameObject SpawnPoint;
     private float _reloadDelay = 0f;
@@ -20,22 +21,16 @@ public class ArrowCaster : MonoBehaviour
     }
     private void SpawnArrow()
     {
-        if (_reloadDelay > 0f)
+        if (Input.GetMouseButton(0))
         {
-            _reloadDelay += Time.deltaTime;
-        }
-        if (Input.GetMouseButtonDown(0))
-        {
-            _reloadDelay += Time.deltaTime;
-        }
-        if (Input.GetMouseButtonUp(0) && _reloadDelay >= 0.5f)
-        {
+            Player.GetComponent<Animator>().SetTrigger("Draw");
+            Player.GetComponent<Animator>().SetTrigger("Shoot");
             _reloadDelay = 0f;
             var Arr = Instantiate(Arrow, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
 //            Arr.transform.position = SpawnPoint.transform.position;
             Arr.transform.eulerAngles = new Vector3(SpawnPoint.transform.eulerAngles.x + 90f, SpawnPoint.transform.eulerAngles.y, SpawnPoint.transform.eulerAngles.z);
         }
-        if (Input.GetMouseButtonUp(0) && _reloadDelay <= 0.5f)
+        if (Input.GetMouseButtonUp(0) && _reloadDelay <= 0.1f)
         {
             _reloadDelay = 0f;
         }

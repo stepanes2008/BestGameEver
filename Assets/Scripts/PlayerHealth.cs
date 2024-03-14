@@ -15,12 +15,14 @@ public class PlayerHealth : MonoBehaviour
 
     public bool IsDead = false;
 
+    public GameObject HealEffect;
     public GameObject gameplayUI;
     public GameObject gameOverScreen;
     private bool DeathOn = false;
 
     private void Start()
     {
+        RenderSettings.ambientLight = Color.black;
         _maxValue = value;
     }
     void Update()
@@ -31,6 +33,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void AddHealth(float amount)
+    {
+        value += amount;
+        if (value > 100f)
+        {
+            value = 100f;
+        }
+        HealEffect.GetComponent<ParticleSystem>().Play();
+        DrawHealthBar();
+    }
     public void DealDamage(float damage)
     {
         value -= damage;
@@ -58,6 +70,7 @@ public class PlayerHealth : MonoBehaviour
         Raptor.GetComponent<Animator>().SetTrigger("Loose");
 
         GetComponent<RotateByX>().enabled = false;
+        GetComponent<CameraRotation>().enabled = false;
         //Destroy(Player);
     }
     private void DrawHealthBar()

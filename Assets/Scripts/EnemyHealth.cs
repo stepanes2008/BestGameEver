@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void DealDamage(float damage)
     {
+        GetComponent<Animator>().SetTrigger("GetHit");
         value -= damage;
         Debug.Log(value);
         if (value <= 0)

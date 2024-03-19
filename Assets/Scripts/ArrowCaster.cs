@@ -21,7 +21,7 @@ public class ArrowCaster : MonoBehaviour
     }
     private void SpawnArrow()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Player.GetComponent<Animator>().SetTrigger("Draw");
             Player.GetComponent<Animator>().SetTrigger("Shoot");

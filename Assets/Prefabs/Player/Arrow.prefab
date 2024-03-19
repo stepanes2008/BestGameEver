@@ -78,6 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   Arrow: {fileID: 8528478804847194013}
+  damage: 25
 --- !u!1 &8528478804847348831
 GameObject:
   m_ObjectHideFlags: 0

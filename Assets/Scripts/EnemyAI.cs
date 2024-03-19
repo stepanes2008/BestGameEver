@@ -28,9 +28,12 @@ public class EnemyAI : MonoBehaviour
     {
         if (GetComponent<EnemyHealth>()._time == 0f)
         {
-            NoticePlayerUpdate();
-            ChaseUpdate();
-            AttackUpdate();
+            if (player.GetComponent<PlayerHealth>().IsDead == false)
+            {
+                NoticePlayerUpdate();
+                ChaseUpdate();
+                AttackUpdate();
+            }
             PatrolUpdate();
             _time += Time.deltaTime;
         }
@@ -39,7 +42,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (_isPlayerNoticed && _navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
         {
-            player.GetComponent<PlayerHealth>().DealDamage(damage * Time.deltaTime);
+            player.GetComponent<PlayerHealth>().DealDamage(damage * Time.deltaTime, gameObject);
             GetComponent<Animator>().SetTrigger("Attack");
         }
     }
@@ -68,7 +71,7 @@ public class EnemyAI : MonoBehaviour
             PickNewPatrolPoint();
         }
     }
-    private void PickNewPatrolPoint()
+    public void PickNewPatrolPoint()
     {
         LastPosition = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
         _navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;

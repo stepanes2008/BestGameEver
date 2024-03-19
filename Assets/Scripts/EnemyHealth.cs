@@ -29,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
     private void DestroyEnemy()
     {
         _time += Time.deltaTime;
-        Raptor.GetComponent<Animator>().SetTrigger("Death");
+        GetComponent<Animator>().SetTrigger("Death");
         if (_time >= 1.5f)
         {
             Destroy(gameObject);

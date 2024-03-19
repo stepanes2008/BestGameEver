@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     public float value = 100;
     public float _time = 0f;
     public float _maxValue;
+    public GameObject RaptorAsset;
+    public GameObject Camera;
 
     public bool IsDead = false;
 
@@ -25,13 +28,7 @@ public class PlayerHealth : MonoBehaviour
         RenderSettings.ambientLight = Color.black;
         _maxValue = value;
     }
-    void Update()
-    {
-        if (value <= 0)
-        {
-            DestroySelf();
-        }
-    }
+
 
     public void AddHealth(float amount)
     {
@@ -43,18 +40,19 @@ public class PlayerHealth : MonoBehaviour
         HealEffect.GetComponent<ParticleSystem>().Play();
         DrawHealthBar();
     }
-    public void DealDamage(float damage)
+    public void DealDamage(float damage, GameObject enemy)
     {
         value -= damage;
         Debug.Log(value);
         if (value <= 0)
         {
-            DestroySelf();
+            DestroySelf(enemy);
         }
         DrawHealthBar();
     }
-    private void DestroySelf()
+    void DestroySelf(GameObject enemy)
     {
+        gameOverScreen.SetActive(true);
         if (!DeathOn)
         {
             DeathOn = true;
@@ -64,14 +62,34 @@ public class PlayerHealth : MonoBehaviour
         IsDead = true;
         _time += Time.deltaTime;
         //Raptor.GetComponent<Animator>().SetTrigger("Death");
-        gameOverScreen.SetActive(true);
         gameplayUI.SetActive(false);
         Player.GetComponent<Animator>().SetTrigger("Death");
-        Raptor.GetComponent<Animator>().SetTrigger("Loose");
+        enemy.GetComponent<Collider>().enabled = false;
+        //GetComponent<Rigidbody>().isKinematic = true;
+        //GetComponent<Collider>().isTrigger = true;
+        enemy.GetComponent<Collider>().isTrigger = true;
+        enemy.GetComponent<Animator>().SetBool("Loose", true);
+        //RaptorAsset.GetComponent<EnemyAI>().viewAngle = 0f;
+        enemy.GetComponent<NavMeshAgent>().Stop();
+        //enemy.GetComponent<EnemyAI>().enabled = false;
 
-        GetComponent<RotateByX>().enabled = false;
+        Camera.GetComponent<RotateByX>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
+        //Invoke("EnemyPickNewPoint", 2);
         //Destroy(Player);
+        void EnemyPickNewPoint()
+        {
+            raptorEat.Stop();
+            enemy.GetComponent<EnemyAI>().PickNewPatrolPoint();
+        }
+    }    
+   
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Smoke")
+        {
+            DealDamage(50f, Raptor);
+        }
     }
     private void DrawHealthBar()
     {

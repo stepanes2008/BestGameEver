@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Smoke
+  - Special
   layers:
   - Default
   - TransparentFX

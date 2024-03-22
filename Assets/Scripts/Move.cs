@@ -21,11 +21,6 @@ public class Move : MonoBehaviour
     {
         Player.GetComponent<Animator>().SetBool("isRunning", false);
         _move = Vector3.zero;
-        if (Input.GetKeyDown(KeyCode.Space) && _controller.isGrounded)
-        {
-            _fallVelocity = -jumpForce;
-            Player.GetComponent<Animator>().SetBool("isRunning", true);
-        }
         if (Input.GetKey(KeyCode.W))
         {
             _move += transform.forward;
@@ -79,14 +74,6 @@ public class Move : MonoBehaviour
             {
                 _fallVelocity = 0f;
             }
-        }
-    }
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("Hello");
-        if (other.gameObject.tag == "Enemy")
-        {
-            Application.LoadLevel(0);
         }
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public GameObject HexEffectPrefab;
     public GameObject Raptor;
     public float value = 100;
     public float _time = 0f;
+    public 
 
     void Update()
     {
@@ -16,6 +19,14 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Special")
+        {
+            Instantiate(HexEffectPrefab, transform.position, Quaternion.identity);
+            DealDamage(100f);
+        }
+    }
     public void DealDamage(float damage)
     {
         GetComponent<Animator>().SetTrigger("GetHit");
@@ -30,8 +41,9 @@ public class EnemyHealth : MonoBehaviour
     {
         _time += Time.deltaTime;
         GetComponent<Animator>().SetTrigger("Death");
-        if (_time >= 1.5f)
+        if (_time >= 1f)
         {
+            GetComponent<EnemyAI>().AddKill();
             Destroy(gameObject);
         }
     }

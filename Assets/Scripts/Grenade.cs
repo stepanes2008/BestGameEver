@@ -16,10 +16,5 @@ public class Grenade : MonoBehaviour
         explosion.transform.position = transform.position;
         explosion.GetComponent<ParticleSystem>().Play();
         Destroy(gameObject);
-        Invoke("DestroyExplosion", 1);
-        void DestroyExplosion()
-        {
-            Destroy(explosion);
-        }
     }
 }

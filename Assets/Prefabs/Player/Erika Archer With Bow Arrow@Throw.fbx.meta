@@ -1,57 +1,12 @@
 fileFormatVersion: 2
-guid: f03d788ff9749274892f3fae92c4dea9
+guid: f1755eb00d6e2314197c2201ea15f561
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Arrow_DIFF
-    second: {fileID: 2800000, guid: e2d5812c143343043b196ab6bd283e9d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Arrow_NM
-    second: {fileID: 2800000, guid: 5cd10a095d4373a41b45ce3400f73c34, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Bow_DIFF
-    second: {fileID: 2800000, guid: 91616d9a411c28447be227627a100cae, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Bow_NM
-    second: {fileID: 2800000, guid: 89549dc2310cca446b3328177ed0c456, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Erika_Archer_Clothes_diffuse
-    second: {fileID: 2800000, guid: 9c3d6d334b0fefd4081a3b721472663f, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Erika_Archer_Clothes_normal
-    second: {fileID: 2800000, guid: 87ee2c2f6695c384eaba9c65294e6109, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: FemaleFitA_Body_diffuse
-    second: {fileID: 2800000, guid: 3471fd6204091134485de088b9557885, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: FemaleFitA_StdNM
-    second: {fileID: 2800000, guid: f76196fb9dc373640bbcb1b4da0fd060, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: FemaleFitA_eyelash_diffuse
-    second: {fileID: 2800000, guid: 39c60c6bde2d336499c9ba57c253e506, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -116,18 +71,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 6b48ebaea5f38174a9bcb67cfc3680f0
-  - 2ad29c17e040e8747821776c42a59f24
-  - bb3827182a38ff349ab9351fcd8364f0
-  - 109d4cdddb8a0484abbbde62214a74fd
-  - d31963a9cdbbf4e44a5daeddeaaddf14
-  - 7ec9c63a369ea614f8ba0a3944ef86fb
-  - 51428c094461fee48a3799c388327e47
-  - 433a305c4e4c1614788343684370f163
-  - 5896c3380b0991447839247b21826b7c
-  - f1755eb00d6e2314197c2201ea15f561
-  - 527db96a3fcd59749853fa42390bc23b
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

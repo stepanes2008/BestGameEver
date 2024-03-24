@@ -18,13 +18,13 @@ public class CastGrenade : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Player.GetComponent<Animator>().SetTrigger("ThrowGrenade");
-            Invoke("Cast", 2.2f);
+            Invoke("Cast", 0.5f);
         }
     }
 
     void Cast()
     {
         var grenade = Instantiate(Grenade, transform.position, transform.rotation);
-        grenade.GetComponent<Rigidbody>().AddForce(transform.forward * 500f);
+        grenade.GetComponent<Rigidbody>().AddForce(transform.forward * 400f);
     }
 }

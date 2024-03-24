@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public GameObject Player;
     public GameObject HexEffectPrefab;
     public GameObject Raptor;
     public float value = 100;
@@ -29,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
     }
     public void DealDamage(float damage)
     {
+        Player.GetComponent<PlayerProgress>().AddExperience(0.2f);
         GetComponent<Animator>().SetTrigger("GetHit");
         value -= damage;
         Debug.Log(value);

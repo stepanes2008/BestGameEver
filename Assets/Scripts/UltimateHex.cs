@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UltimateHex : MonoBehaviour
 {
-    //Ссылка на префаб утки
+    public TextMeshProUGUI UsagesLeftTMP;
+    public GameObject AbilityIcon;
+    public int UseagesLeft = 3;
     public GameObject collider;
-    //Ссылка на иконку способности
     public Image SpellIcon;
-    //Время перезарядки
     public float Cooldown;
 
     float _timer = 0f;
@@ -40,8 +41,19 @@ public class UltimateHex : MonoBehaviour
         }
         //Сбрасываем таймер
         */
-        Instantiate(collider, transform.position, transform.rotation);
-        _timer = 0f;
+        if (UseagesLeft > 0)
+        {
+            UseagesLeft--;
+            UsagesLeftTMP.text = UseagesLeft.ToString();
+            Instantiate(collider, transform.position, transform.rotation);
+            _timer = 0f;
+        }
+        if (UseagesLeft <= 0)
+        {
+            Destroy(AbilityIcon);
+            enabled = false;
+        }
+
     }
 
     void UpdateUltimateIcon()

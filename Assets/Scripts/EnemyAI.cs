@@ -123,4 +123,9 @@ public class EnemyAI : MonoBehaviour
             _navMeshAgent.destination = LastPosition;
         }
     }
+
+    public void ChangeExperienceBar()
+    {
+        player.GetComponent<PlayerProgress>().AddExperience(20);
+    }
 }

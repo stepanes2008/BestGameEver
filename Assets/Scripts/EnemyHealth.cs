@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    private bool Death = false;
+    public GameObject Player;
     public GameObject HexEffectPrefab;
     public GameObject Raptor;
     public float value = 100;
@@ -29,11 +31,16 @@ public class EnemyHealth : MonoBehaviour
     }
     public void DealDamage(float damage)
     {
+        if (!Death)
+        {
+            GetComponent<EnemyAI>().ChangeExperienceBar();
+        }
         GetComponent<Animator>().SetTrigger("GetHit");
         value -= damage;
         Debug.Log(value);
         if (value <= 0)
         {
+            Death = true;
             DestroyEnemy();
         }
     }

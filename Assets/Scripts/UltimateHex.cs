@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class UltimateHex : MonoBehaviour
 {
@@ -10,9 +9,6 @@ public class UltimateHex : MonoBehaviour
     public Image SpellIcon;
     //Время перезарядки
     public float Cooldown;
-    private int UseCount = 3;
-    public GameObject Icon;
-    public GameObject CounterText;
 
     float _timer = 0f;
 
@@ -44,18 +40,8 @@ public class UltimateHex : MonoBehaviour
         }
         //Сбрасываем таймер
         */
-        if (UseCount > 0)
-        {
-            Instantiate(collider, transform.position, transform.rotation);
-            _timer = 0f;
-            UseCount--;
-            CounterText.GetComponent<TMP_Text>().text = UseCount.ToString();
-        }
-        if (UseCount == 0)
-        {
-            Destroy(Icon);
-            enabled = false;
-        }
+        Instantiate(collider, transform.position, transform.rotation);
+        _timer = 0f;
     }
 
     void UpdateUltimateIcon()

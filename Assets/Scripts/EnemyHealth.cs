@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
         }
         GetComponent<Animator>().SetTrigger("GetHit");
         value -= damage;
-        Debug.Log(value);
+        //Debug.Log(value);
         if (value <= 0)
         {
             Death = true;

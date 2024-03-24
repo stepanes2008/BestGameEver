@@ -126,6 +126,6 @@ public class EnemyAI : MonoBehaviour
 
     public void ChangeExperienceBar()
     {
-        player.GetComponent<PlayerProgress>().AddExperience(20);
+        player.GetComponent<PlayerProgress>().AddExperience(5);
     }
 }

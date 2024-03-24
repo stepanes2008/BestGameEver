@@ -1621,10 +1621,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c62af830d90bc547b1bb200910d6c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UsagesLeftTMP: {fileID: 0}
+  AbilityIcon: {fileID: 0}
+  UseagesLeft: 3
   collider: {fileID: 4000800041985645241, guid: 09a74f6033663364687e329003f65ecd,
     type: 3}
   SpellIcon: {fileID: 0}
-  Cooldown: 30
+  Cooldown: 20
 --- !u!114 &4737995264806006344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1657,6 +1660,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadbf07b04c09144ba3611087d4f0aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels:
+  - fireballDamage: 5
+    stunTiming: 5
+    experienceForTheNextLevel: 100
+  - fireballDamage: 8
+    stunTiming: 6
+    experienceForTheNextLevel: 150
+  - fireballDamage: 10
+    stunTiming: 7
+    experienceForTheNextLevel: 250
+  - fireballDamage: 12
+    stunTiming: 8
+    experienceForTheNextLevel: 400
+  - fireballDamage: 15
+    stunTiming: 9
+    experienceForTheNextLevel: 700
+  - fireballDamage: 18
+    stunTiming: 10
+    experienceForTheNextLevel: 1200
+  - fireballDamage: 20
+    stunTiming: 11
+    experienceForTheNextLevel: 2000
+  - fireballDamage: 25
+    stunTiming: 12
+    experienceForTheNextLevel: 3000
+  - fireballDamage: 33.4
+    stunTiming: 13
+    experienceForTheNextLevel: 4500
+  - fireballDamage: 50
+    stunTiming: 15
+    experienceForTheNextLevel: 7000
   levelValueTMP: {fileID: 7109284116843720844, guid: 04b5204274f241746a9d5766c8b66605,
     type: 3}
   _experienceValueRectTransform: {fileID: 3043006956605795445, guid: b14933ae60856334a87243ada2e7e2ec,

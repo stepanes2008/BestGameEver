@@ -5,6 +5,10 @@ using TMPro;
 
 public class PlayerProgress : MonoBehaviour
 {
+    //public ArrowController arrowController;
+
+    public List<PlayerProgressLevel> levels;
+
     public TextMeshProUGUI levelValueTMP;
     public RectTransform _experienceValueRectTransform;
 
@@ -15,6 +19,7 @@ public class PlayerProgress : MonoBehaviour
     
     void Start()
     {
+        SetLevel();
         DrawUI();
     }
 
@@ -24,7 +29,8 @@ public class PlayerProgress : MonoBehaviour
         if (_experienceCurrentValue >= _experienceTargetValue)
         {
             _levelValue++;
-            _experienceCurrentValue -= _experienceTargetValue;
+            _experienceCurrentValue = 0f;
+            SetLevel();
         }
         DrawUI();
     }
@@ -33,5 +39,11 @@ public class PlayerProgress : MonoBehaviour
     {
         _experienceValueRectTransform.anchorMax = new Vector3(_experienceCurrentValue / _experienceTargetValue, 1);
         levelValueTMP.text = _levelValue.ToString();
+    }
+
+    private void SetLevel()
+    {
+        _experienceTargetValue = levels[_levelValue - 1].experienceForTheNextLevel;
+        Debug.Log(_experienceTargetValue);
     }
 }

@@ -37976,9 +37976,24 @@ PrefabInstance:
       objectReference: {fileID: 529926392}
     - target: {fileID: 2053180835074000212, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
         type: 3}
+      propertyPath: levels.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053180835074000212, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
+        type: 3}
       propertyPath: _experienceValueRectTransform
       value: 
       objectReference: {fileID: 1715910463}
+    - target: {fileID: 2053180835074000212, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
+        type: 3}
+      propertyPath: levels.Array.data[0].stunTiming
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053180835074000212, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
+        type: 3}
+      propertyPath: levels.Array.data[0].fireballDamage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4737995264806006344, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
         type: 3}
       propertyPath: Text

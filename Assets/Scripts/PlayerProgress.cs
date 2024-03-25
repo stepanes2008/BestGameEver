@@ -6,10 +6,12 @@ using TMPro;
 public class PlayerProgress : MonoBehaviour
 {
     //public ArrowController arrowController;
-
+    public CastGrenade castGrenade;
     public List<PlayerProgressLevel> levels;
 
     public TextMeshProUGUI levelValueTMP;
+    public TextMeshProUGUI stunTimingTMP;
+    public TextMeshProUGUI damageTMP;
     public RectTransform _experienceValueRectTransform;
 
     private int _levelValue = 1;
@@ -44,6 +46,11 @@ public class PlayerProgress : MonoBehaviour
     private void SetLevel()
     {
         _experienceTargetValue = levels[_levelValue - 1].experienceForTheNextLevel;
-        Debug.Log(_experienceTargetValue);
+
+        GetComponent<ArrowCaster>().damage = levels[_levelValue - 1].fireballDamage;
+        damageTMP.text = levels[_levelValue - 1].fireballDamage.ToString();
+
+        castGrenade.stunTime = levels[_levelValue - 1].stunTiming;
+        stunTimingTMP.text = levels[_levelValue - 1].stunTiming.ToString();
     }
 }

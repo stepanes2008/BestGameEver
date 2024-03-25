@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ArrowCaster : MonoBehaviour
 {
+    public float damage = 5f;
+
     public GameObject Player;
     public ArrowController Arrow;
     public GameObject SpawnPoint;
@@ -29,6 +31,7 @@ public class ArrowCaster : MonoBehaviour
             var Arr = Instantiate(Arrow, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
 //            Arr.transform.position = SpawnPoint.transform.position;
             Arr.transform.eulerAngles = new Vector3(SpawnPoint.transform.eulerAngles.x + 90f, SpawnPoint.transform.eulerAngles.y, SpawnPoint.transform.eulerAngles.z);
+            Arr.GetComponent<ArrowController>().damage = damage;
         }
         if (Input.GetMouseButtonUp(0) && _reloadDelay <= 0.1f)
         {

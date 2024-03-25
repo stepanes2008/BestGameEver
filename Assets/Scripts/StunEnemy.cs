@@ -14,8 +14,7 @@ public class StunEnemy : MonoBehaviour
             GetComponent<EnemyAI>().enabled = false;
             GetComponent<NavMeshAgent>().isStopped = true;
             gameObject.GetComponent<Animator>().SetBool("Stun", true);
-            Invoke("NullifyEffect", 7);
-            Debug.Log("+");
+            Invoke("NullifyEffect", other.gameObject.GetComponent<SizeIncrease>().stunTime);
         }
     }
     void NullifyEffect()

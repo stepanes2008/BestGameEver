@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SizeIncrease : MonoBehaviour
 {
+    public float stunTime = 5f;
     public float invokeTime = 3f;
     public float increaseSpeed;
     // Start is called before the first frame update

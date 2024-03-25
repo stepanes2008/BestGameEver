@@ -1454,6 +1454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fba07150b1cd044841446666b62a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
   Player: {fileID: 5548949615272805603}
   Arrow: {fileID: 8528478806384715455, guid: 92e5064673a02794c8b58ef8fd5d8347, type: 3}
   SpawnPoint: {fileID: 3449036562559953939}
@@ -1665,31 +1666,31 @@ MonoBehaviour:
     stunTiming: 5
     experienceForTheNextLevel: 100
   - fireballDamage: 8
-    stunTiming: 6
+    stunTiming: 5
     experienceForTheNextLevel: 150
   - fireballDamage: 10
-    stunTiming: 7
+    stunTiming: 6
     experienceForTheNextLevel: 250
   - fireballDamage: 12
-    stunTiming: 8
+    stunTiming: 6
     experienceForTheNextLevel: 400
   - fireballDamage: 15
-    stunTiming: 9
+    stunTiming: 7
     experienceForTheNextLevel: 700
   - fireballDamage: 18
-    stunTiming: 10
+    stunTiming: 7
     experienceForTheNextLevel: 1200
   - fireballDamage: 20
-    stunTiming: 11
+    stunTiming: 8
     experienceForTheNextLevel: 2000
   - fireballDamage: 25
-    stunTiming: 12
+    stunTiming: 8
     experienceForTheNextLevel: 3000
   - fireballDamage: 33.4
-    stunTiming: 13
+    stunTiming: 9
     experienceForTheNextLevel: 4500
   - fireballDamage: 50
-    stunTiming: 15
+    stunTiming: 10
     experienceForTheNextLevel: 7000
   levelValueTMP: {fileID: 7109284116843720844, guid: 04b5204274f241746a9d5766c8b66605,
     type: 3}

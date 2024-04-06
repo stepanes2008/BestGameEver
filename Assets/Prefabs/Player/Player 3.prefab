@@ -1622,6 +1622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c62af830d90bc547b1bb200910d6c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerAnimator: {fileID: 0}
   UsagesLeftTMP: {fileID: 0}
   AbilityIcon: {fileID: 0}
   UseagesLeft: 3
@@ -1661,6 +1662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadbf07b04c09144ba3611087d4f0aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castGrenade: {fileID: 0}
   levels:
   - fireballDamage: 5
     stunTiming: 5
@@ -1685,15 +1687,17 @@ MonoBehaviour:
     experienceForTheNextLevel: 2000
   - fireballDamage: 25
     stunTiming: 8
-    experienceForTheNextLevel: 3000
+    experienceForTheNextLevel: 2500
   - fireballDamage: 33.4
     stunTiming: 9
-    experienceForTheNextLevel: 4500
+    experienceForTheNextLevel: 4000
   - fireballDamage: 50
     stunTiming: 10
-    experienceForTheNextLevel: 7000
+    experienceForTheNextLevel: 5000
   levelValueTMP: {fileID: 7109284116843720844, guid: 04b5204274f241746a9d5766c8b66605,
     type: 3}
+  stunTimingTMP: {fileID: 0}
+  damageTMP: {fileID: 0}
   _experienceValueRectTransform: {fileID: 3043006956605795445, guid: b14933ae60856334a87243ada2e7e2ec,
     type: 3}
 --- !u!1 &4748319825971459924
@@ -8414,6 +8418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f374eb7e87a07944e8da73c701ea7375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunTime: 5
   Grenade: {fileID: 100006, guid: c627bbec57aaa2b47b18bad70ab9f2ac, type: 3}
   Player: {fileID: 5548949615272805603}
 --- !u!1 &8632282203760447911

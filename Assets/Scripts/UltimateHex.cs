@@ -4,6 +4,7 @@ using TMPro;
 
 public class UltimateHex : MonoBehaviour
 {
+    public Animator PlayerAnimator;
     public TextMeshProUGUI UsagesLeftTMP;
     public GameObject AbilityIcon;
     public int UseagesLeft = 3;
@@ -43,6 +44,7 @@ public class UltimateHex : MonoBehaviour
         */
         if (UseagesLeft > 0)
         {
+            PlayerAnimator.SetTrigger("Special");
             UseagesLeft--;
             UsagesLeftTMP.text = UseagesLeft.ToString();
             Instantiate(collider, transform.position, transform.rotation);

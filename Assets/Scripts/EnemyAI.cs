@@ -44,11 +44,18 @@ public class EnemyAI : MonoBehaviour
         {
             if (player.GetComponent<PlayerHealth>().IsDead == false)
             {
-                NoticePlayerUpdate();
                 ChaseUpdate();
                 AttackUpdate();
             }
-            PatrolUpdate();
+            if (player.GetComponent<KillsCount>().kills > 39)
+            {
+                _isPlayerNoticed = true;
+            }
+            else
+            {
+                NoticePlayerUpdate();
+                PatrolUpdate();
+            }
             _time += Time.deltaTime;
         }
     }

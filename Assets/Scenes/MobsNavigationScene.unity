@@ -7451,6 +7451,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5101784396962642643}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &482393780 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5548949615272805605, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
+    type: 3}
+  m_PrefabInstance: {fileID: 5548949615595813457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &492771665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38080,6 +38086,11 @@ PrefabInstance:
       propertyPath: UsagesLeftTMP
       value: 
       objectReference: {fileID: 343574124}
+    - target: {fileID: 4737995264806006345, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
+        type: 3}
+      propertyPath: PlayerAnimator
+      value: 
+      objectReference: {fileID: 482393780}
     - target: {fileID: 4737995264806006367, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
         type: 3}
       propertyPath: m_Name

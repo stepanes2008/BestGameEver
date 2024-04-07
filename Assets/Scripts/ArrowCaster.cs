@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ArrowCaster : MonoBehaviour
 {
+    public AudioSource audioSource;
     public float damage = 5f;
 
+    public AudioClip shootSound;
     public GameObject Player;
     public ArrowController Arrow;
     public GameObject SpawnPoint;
@@ -27,6 +29,7 @@ public class ArrowCaster : MonoBehaviour
         {
             Player.GetComponent<Animator>().SetTrigger("Draw");
             Player.GetComponent<Animator>().SetTrigger("Shoot");
+            audioSource.PlayOneShot(shootSound);
             _reloadDelay = 0f;
             var Arr = Instantiate(Arrow, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
 //            Arr.transform.position = SpawnPoint.transform.position;

@@ -7,10 +7,17 @@ public class SizeIncrease : MonoBehaviour
     public float stunTime = 5f;
     public float invokeTime = 3f;
     public float increaseSpeed;
+    private float soundTime = 1.5f;
     // Start is called before the first frame update
     void Start()
     {
+        if (gameObject.tag == "FirstSmoke")
+        {
+            Destroy(gameObject);
+        }
+        //GetComponent<AudioSource>().Play();
         transform.localScale = Vector3.zero;
+        Invoke("StopSound", soundTime);
         Invoke("DestroyExplosion", invokeTime);
     }
 
@@ -22,5 +29,9 @@ public class SizeIncrease : MonoBehaviour
     void DestroyExplosion()
     {
         Destroy(gameObject);
+    }
+    void StopSound()
+    {
+        GetComponent<AudioSource>().Stop();
     }
 }

@@ -16,7 +16,6 @@ public class CastGrenade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(stunTime);
         if (Input.GetMouseButtonDown(1))
         {
             Player.GetComponent<Animator>().SetTrigger("ThrowGrenade");

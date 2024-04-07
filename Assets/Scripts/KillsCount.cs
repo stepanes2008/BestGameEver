@@ -13,6 +13,7 @@ public class KillsCount : MonoBehaviour
     public float KillsToWin;
     public GameObject Text;
     public GameObject VictoryText;
+    public AudioClip winSound;
     // Update is called once per frame
     void Update()
     {
@@ -20,6 +21,7 @@ public class KillsCount : MonoBehaviour
         if (kills >= KillsToWin)
         {
             Win = true;
+            GetComponent<AudioSource>().PlayOneShot(winSound);
             PlayerAnimator.SetTrigger("Victory");
             VictoryText.GetComponent<TMP_Text>().text = "Victory";
             VictoryScreen.SetActive(true);

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public AudioClip healSound;
     public AudioSource audioSource;
     public AudioSource raptorEat;
     public RectTransform valueRectTransform;
@@ -35,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void AddHealth(float amount)
     {
+        audioSource.PlayOneShot(healSound);
         value += amount;
         if (value > 100f)
         {

@@ -26624,6 +26624,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smoke
       objectReference: {fileID: 0}
+    - target: {fileID: 254140639458140754, guid: 635421dd998aab748873ebc947b76d61,
+        type: 3}
+      propertyPath: m_TagString
+      value: FirstSmoke
+      objectReference: {fileID: 0}
     - target: {fileID: 3988580657615328364, guid: 635421dd998aab748873ebc947b76d61,
         type: 3}
       propertyPath: m_RootOrder
@@ -26679,6 +26684,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6308557380229571905, guid: 635421dd998aab748873ebc947b76d61,
+        type: 3}
+      propertyPath: increaseSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6480290139418833252, guid: 635421dd998aab748873ebc947b76d61,
         type: 3}
       propertyPath: m_Height
@@ -26703,6 +26713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072927791891421922, guid: 635421dd998aab748873ebc947b76d61,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 635421dd998aab748873ebc947b76d61, type: 3}
@@ -38056,6 +38071,11 @@ PrefabInstance:
       propertyPath: Text
       value: 
       objectReference: {fileID: 354613842}
+    - target: {fileID: 4737995264806006344, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
+        type: 3}
+      propertyPath: KillsToWin
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 4737995264806006344, guid: ddddd70c61f1acb4bac3bfa1fcfa9941,
         type: 3}
       propertyPath: VictoryText

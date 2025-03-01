@@ -8417,14 +8417,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8622220931946723202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f374eb7e87a07944e8da73c701ea7375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stunTime: 5
+  cooldown: 15
   Grenade: {fileID: 100006, guid: c627bbec57aaa2b47b18bad70ab9f2ac, type: 3}
   Player: {fileID: 5548949615272805603}
+  AbilityIcon: {fileID: 0}
+  SpellIcon: {fileID: 0}
 --- !u!1 &8632282203760447911
 GameObject:
   m_ObjectHideFlags: 0

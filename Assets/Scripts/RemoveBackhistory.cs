@@ -5,6 +5,7 @@ using UnityEngine;
 public class RemoveBackhistory : MonoBehaviour
 {
     public GameObject Player;
+    public GameObject GrenadeCaster;
     public GameObject Camera;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class RemoveBackhistory : MonoBehaviour
             Player.GetComponent<PlayerHealth>().enabled = true;
             Player.GetComponent<ArrowCaster>().enabled = true;
             Player.GetComponent<UltimateHex>().enabled = true;
+            GrenadeCaster.GetComponent<CastGrenade>().enabled = true;
             Camera.GetComponent<RotateByX>().enabled = true;
             gameObject.SetActive(false);
         }
